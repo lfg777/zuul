@@ -3,3 +3,12 @@ spring:
     name: api-gateway
 server:
   port: 1234
+zuul:
+  routes:
+    my-eureka-client-1:
+      path: /api-a/**
+      serivceId: my-eureka-client-1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:2021/eureka/
